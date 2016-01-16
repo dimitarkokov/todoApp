@@ -25,7 +25,30 @@ angular.module('taskApp',[]).controller('actionsController',function($scope) {
         });
     };
 
+    $scope.removeTasks = function() {
+        var doneTasks = $scope.tasks;
+        $scope.tasks = [];
+        angular.forEach(doneTasks, function(task) {
+            if (!task.done) $scope.tasks.push(task);
+        });
+    };
 
+    $scope.isTask = function(){
+        return $scope.tasks.length > 0;
+    }
+
+
+    $scope.itemText = function() {
+        return ($scope.tasks.length - $scope.remaining() > 1) ? "tasks" : "task";
+    };
+
+    $scope.remaining = function() {
+        var counter = 0;
+        angular.forEach($scope.tasks, function(task) {
+            counter += task.done ? 0 : 1;
+        });
+        return counter;
+    };
 
 
 

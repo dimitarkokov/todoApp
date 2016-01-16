@@ -10,11 +10,21 @@ body {
     font-size: 14px;
     color: #ffffff;
     margin: 0 auto;
+    font-family: 'LatoWeb';
 }
 
 #main-wrapper {
     padding: 20px;
     margin-bottom: 40px;
+}
+
+#data-container {
+    width: 50%;
+    font-size: 24px;
+    padding: 6px;
+    position: relative;
+    margin: 0 auto;
+    display: block;
 }
 
 #main-wrapper h1 {
@@ -105,7 +115,11 @@ body {
     display: none;
     margin: 0 -20px -20px -20px;
     overflow: hidden;
-
+    color: #555555;
+    background: #f4fce8;
+    border-top: 1px solid #ededed;
+    padding: 0 20px;
+    line-height: 37px;
 }
 
 .task-counter {
@@ -120,6 +134,7 @@ body {
     float: right;
     line-height: 20px;
     text-decoration: none;
+    background: rgba(0, 0, 0, 0.1);
     color: #555555;
     font-size: 11px;
     margin-top: 8px;

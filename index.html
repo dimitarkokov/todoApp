@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link type="text/css" rel="stylesheet" href="styles/normalize-v3.0.2.css">
+    <link type="text/css" rel="stylesheet" href="styles/fonts.css">
     <link type="text/css" rel="stylesheet" href="styles/main.css">
 </head>
 
@@ -11,7 +12,7 @@
 <body ng-app="taskApp" ng-cloak>
 
 <div id="main-wrapper" ng-controller="actionsController">
-
+<div id="data-container">
     <h1>What are your tasks today?</h1>
     <input id="new-task" type="text" ng-model="taskText"  size="30" ng-keyup="addTask()"/>
 
@@ -39,7 +40,7 @@
             Clear <span>{{(tasks.length - remaining())}} {{itemText()}}</span>.
         </a>
     </footer>
-
+</div>
 </div>
 
 
