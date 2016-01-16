@@ -3,8 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="styles/normalize-v3.0.2.css">
+    <link type="text/css" rel="stylesheet" href="styles/main.css">
 </head>
-<body>
+
+
+<body ng-app="taskApp" ng-cloak>
+
+<div id="main-wrapper" ng-controller="actionsController">
+
+    <h1>What are your tasks today?</h1>
+    <input id="new-task" type="text" ng-model="taskText"  size="30" ng-keyup="addTask()"/>
+
+
+        <div id="select-all-wrapper" ng-show="isTask()">
+            <input id="toggle-all" type="checkbox" ng-model="selectAll"
+                   ng-click="toggleselectAll()"/>
+            <label for="toggle-all">Mark all as complete</label>
+        </div>
+
+    <ul id="task-list">
+        <li ng-repeat="task in tasks" ng-class="{'':!toggled, 'edit-mode':toggled}" ng-dblClick="toggled = !toggled">
+            <div class="task-item-wrap">
+                <input type="checkbox" ng-model="task.done"/>
+                <span class="done-{{task.done}}">{{task.text}}</span>
+            </div>
+            <input class="edit" type="text" ng-model="task.text"/>
+        </li>
+    </ul>
+
+
+    <footer style="display: block;">
+        <div class="task-counter">{{remaining()}} of {{tasks.length}} remaining</div>
+        <a id="clear-completed" ng-click="removeTasks()" ng-show="taskDone()">
+            Clear <span>{{(tasks.length - remaining())}} {{itemText()}}</span>.
+        </a>
+    </footer>
+
+</div>
+
+
+
+<script src="scripts/angularJS-v1.4.8.js"></script>
+<script src="scripts/controllers/actionsController.js"></script>
 
 </body>
 </html>
