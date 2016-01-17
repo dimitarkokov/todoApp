@@ -29,9 +29,11 @@
         </div>
 
     <ul id="task-list">
-        <li ng-repeat="task in tasks" ng-class="{'':!toggled, 'edit-mode':toggled}" ng-dblClick="toggled = !toggled">
+        <li ng-repeat="task in tasks"  >
+            <div class="edit-switch" ng-class="{'':!toggled, 'edit-mode':toggled}" style="float: right" ng-click="toggled = !toggled"></div>
             <div class="task-item-wrap">
-                <input type="checkbox" ng-model="task.done"/>
+
+                <input class="check-task" type="checkbox" ng-model="task.done"/>
                 <span class="done-{{task.done}}">{{task.text}}</span>
             </div>
             <input class="edit" type="text" ng-model="task.text"/>

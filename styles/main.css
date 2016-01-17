@@ -65,24 +65,50 @@ body {
     list-style: none;
 }
 
-#task-list li:nth-of-type(1) {
+#task-list li:nth-of-type(1) .task-item-wrap  {
     border-radius: 0px 0px 4px 4px;
     -webkit-border-radius: 0px 0px 4px 4px;
     -moz-border-radius: 0px 0px 4px 4px;
 }
 
+.edit-switch {
+    right: 10px;
+    position: absolute;
+    z-index: 10;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 50px;
+
+}
+
+.edit-switch:before {
+    font-family: "FontAwesome";
+    content:"\f040";
+    color: #000000;
+}
+
+.edit-switch.edit-mode:before {
+    font-family: "FontAwesome";
+    content:"\f14b";
+    font-size: 22px;
+    color: #FFFFFF;
+}
+
 #task-list li {
-    padding: 10px;
-    padding-top: 6px;
-    margin-bottom: 2px;
+    height: 50px;
+    line-height: 46px;
     position: relative;
     font-size: 20px;
+}
+
+.task-item-wrap {
     color: #000000;
     background-color: rgba(255,255,255,0.9);
     border-radius: 4px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
 }
+
 
 #task-list li .edit {
     display: none;
@@ -97,20 +123,20 @@ body {
     border-bottom: 0px;
     color: #000000;
     text-align: center;
+    background-color: rgba(255, 0, 0, 0.4);
+    color: #ffffff;
 }
 
-#task-list li.edit-mode .edit {
+#task-list li .edit-switch.edit-mode + .task-item-wrap + .edit {
     display: block;
 }
 
-#task-list li.edit-mode {
-    background-color: rgba(255, 0, 0, 0.4);
-}
 
-#task-list li.edit-mode input.edit {
-    color: #ffffff;
+
+#task-list li .edit-switch.edit-mode + .task-item-wrap input.edit {
+
 }
-#task-list li.edit-mode .task-item-wrap {
+#task-list li .edit-switch.edit-mode + .task-item-wrap {
     display: none;
 }
 
@@ -145,7 +171,6 @@ body {
     font-size: 14px;
     cursor: pointer;
     float: right;
-}
 }
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
