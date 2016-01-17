@@ -18,8 +18,8 @@ body {
     margin-bottom: 40px;
 }
 
-#data-container {
-    width: 50%;
+#data-wrapper {
+    width: 65%;
     font-size: 24px;
     padding: 6px;
     position: relative;
@@ -30,6 +30,17 @@ body {
 #main-wrapper h1 {
     font-size: 36px;
     text-align: center;
+    top: 10px;
+    position: relative;
+}
+#menu-wrapper {
+    font-size: 14px;
+    padding: 10px;
+    margin-top: 60px;
+    background-color: rgba(255, 165, 0, 0.9);
+    border-radius: 4px 4px 0px 0px;
+    -webkit-border-radius: 4px 4px 0px 0px;
+    -moz-border-radius: 4px 4px 0px 0px;
 }
 
 #main-wrapper input[type="text"] {
@@ -48,47 +59,59 @@ body {
     text-align: center;
 }
 
-#main {
-    display: none;
-}
-
 #task-list {
-    margin: 10px 0;
+    margin: 0px;
     padding: 0;
     list-style: none;
 }
 
+#task-list li:nth-of-type(1) {
+    border-radius: 0px 0px 4px 4px;
+    -webkit-border-radius: 0px 0px 4px 4px;
+    -moz-border-radius: 0px 0px 4px 4px;
+}
+
 #task-list li {
-    padding: 20px 20px 20px 20px;
+    padding: 10px;
+    padding-top: 6px;
+    margin-bottom: 2px;
     position: relative;
-    font-size: 24px;
-    border-bottom: 1px solid #cccccc;
-    background-color: rgba(0,0,0,0.5);
+    font-size: 20px;
+    color: #000000;
+    background-color: rgba(255,255,255,0.9);
     border-radius: 4px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
 }
 
-
-#task-list li:last-child {
-    border-bottom: none;
-}
-
 #task-list li .edit {
     display: none;
-}
-#task-list li.edit-mode {
-    border-bottom: 1px solid #778899;
+    width: 100%;
+    font-size: 20px;
+    line-height: inherit;
+    padding: 0px;
+    position: relative;
+    margin: 0 auto;
+    background: 0;
+    border: 0;
+    border-bottom: 0px;
+    color: #000000;
+    text-align: center;
 }
 
-#task-list li.edit-mode .task-item-wrap {
-    display: none;
-}
 #task-list li.edit-mode .edit {
     display: block;
-    width: 444px;
-    padding: 13px 15px 14px 20px;
-    margin: 0;
+}
+
+#task-list li.edit-mode {
+    background-color: rgba(255, 0, 0, 0.4);
+}
+
+#task-list li.edit-mode input.edit {
+    color: #ffffff;
+}
+#task-list li.edit-mode .task-item-wrap {
+    display: none;
 }
 
 #task-list li.done label {
@@ -111,38 +134,21 @@ body {
     height: 20px;
 }
 
-#main-wrapper footer {
-    display: none;
-    margin: 0 -20px -20px -20px;
-    overflow: hidden;
-    color: #555555;
-    background: #f4fce8;
-    border-top: 1px solid #ededed;
-    padding: 0 20px;
-    line-height: 37px;
-}
 
-.task-counter {
-    float:left;
-}
-
-.task-count .count{
-    font-weight:bold;
+.menu-item {
+    display: inline-block;
 }
 
 #clear-completed {
-    float: right;
-    line-height: 20px;
     text-decoration: none;
-    background: rgba(0, 0, 0, 0.1);
-    color: #555555;
-    font-size: 11px;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    padding: 0 10px 1px;
+    color: #FFFFFF;
+    font-size: 14px;
     cursor: pointer;
+    float: right;
+}
 }
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
     display: none !important;
 }
+

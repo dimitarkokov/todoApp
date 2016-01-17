@@ -5,6 +5,7 @@
     <title>Title</title>
     <link type="text/css" rel="stylesheet" href="styles/normalize-v3.0.2.css">
     <link type="text/css" rel="stylesheet" href="styles/fonts.css">
+    <link type="text/css" rel="stylesheet" href="styles/font-awesome.min.css">
     <link type="text/css" rel="stylesheet" href="styles/main.css">
 </head>
 
@@ -12,15 +13,19 @@
 <body ng-app="taskApp" ng-cloak>
 
 <div id="main-wrapper" ng-controller="actionsController">
-<div id="data-container">
-    <h1>What are your tasks today?</h1>
+<div id="data-wrapper">
+    <h1>What are your tasks for today?</h1>
     <input id="new-task" type="text" ng-model="taskText"  size="30" ng-keyup="addTask()"/>
 
 
-        <div id="select-all-wrapper" ng-show="isTask()">
-            <input id="toggle-all" type="checkbox" ng-model="selectAll"
+        <div id="menu-wrapper" ng-show="isTask()">
+            <input class="menu-item" id="toggle-all" type="checkbox" ng-model="selectAll"
                    ng-click="toggleselectAll()"/>
             <label for="toggle-all">Mark all as complete</label>
+            <div class="menu-item" id="task-counter">{{remaining()}} of {{tasks.length}} remaining</div>
+            <div class="menu-item" id="clear-completed" ng-click="removeTasks()" ng-show="taskDone()">
+                <i class="fa fa-trash"></i> <span>{{(tasks.length - remaining())}} {{itemText()}}</span>
+            </div>
         </div>
 
     <ul id="task-list">
@@ -33,13 +38,6 @@
         </li>
     </ul>
 
-
-    <footer style="display: block;">
-        <div class="task-counter">{{remaining()}} of {{tasks.length}} remaining</div>
-        <a id="clear-completed" ng-click="removeTasks()" ng-show="taskDone()">
-            Clear <span>{{(tasks.length - remaining())}} {{itemText()}}</span>.
-        </a>
-    </footer>
 </div>
 </div>
 
