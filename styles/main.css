@@ -1,3 +1,6 @@
+
+/* GLOBAL ELEMENTS */
+
 html {
     background: url("../images/bg.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -8,215 +11,11 @@ html {
 }
 
 body {
-    font-size: 14px;
+    font-size: 26px;
     color: #ffffff;
     margin: 0 auto;
     font-family: 'LatoWebLight';
     height: 100%;
-}
-
-#main-wrapper {
-    height: 100%;
-    overflow: hidden;
-}
-
-#content-wrapper {
-    width: 65%;
-    font-size: 24px;
-    padding: 6px;
-    position: relative;
-    margin: 0 auto;
-    display: block;
-    height: 100%;
-}
-
-
-#main-wrapper h1 {
-    font-size: 36px;
-    text-align: center;
-    top: 10px;
-    position: relative;
-    font-family: "LatoWebBold";
-}
-
-#interactions-wrapper {
-    position: relative;
-    margin-top: 60px;
-    height: 100%;
-}
-
-#menu-wrapper {
-    font-size: 14px;
-    padding: 8px;
-    padding-left: 15px;
-    margin-top: 60px;
-    line-height: 24px;
-    background-color: rgba(255, 165, 0, 0.9);
-    border-radius: 4px 4px 0px 0px;
-    -webkit-border-radius: 4px 4px 0px 0px;
-    -moz-border-radius: 4px 4px 0px 0px;
-}
-
-#main-wrapper input[type="text"] {
-    width: 50%;
-    font-size: 24px;
-    line-height: 1.4em;
-    padding: 6px;
-    position: relative;
-    margin: 0 auto;
-    display: block;
-    background: 0;
-    border: 0;
-    border-bottom: 3px solid #fff;
-    color: #fff;
-    outline: 0;
-    text-align: center;
-}
-
-#tasks-wrapper {
-position: absolute;
-left: 0px;
-right: 0px;
-bottom: 260px;
-top: 40px;
-overflow: scroll;
-}
-
-#task-list {
-    margin: 0px;
-    padding: 0;
-    list-style: none;
-}
-
-#task-list li:nth-of-type(1) .task-item-wrap,
-#task-list li:nth-of-type(1) .edit {
-    border-radius: 0px 0px 4px 4px;
-    -webkit-border-radius: 0px 0px 4px 4px;
-    -moz-border-radius: 0px 0px 4px 4px;
-}
-
-.edit-switch {
-    right: 15px;
-    position: absolute;
-    z-index: 10;
-    cursor: pointer;
-    font-size: 18px;
-    line-height: 48px;
-
-}
-
-
-
-.edit-switch:before {
-    font-family: "FontAwesome";
-    content:"\f040";
-    color: #7B7B7B;
-}
-
-.edit-switch.edit-mode:before {
-    font-family: "FontAwesome";
-    content:"\f058";
-    font-size: 26px;
-    color: #FFFFFF;
-}
-
-.edit-switch:hover:before {
-    color: #FFA500
-}
-
-.edit-switch.edit-mode:hover:before {
-    color: #FFE403;
-}
-
-#task-list li {
-    height: 50px;
-    line-height: 46px;
-    position: relative;
-    font-size: 22px;
-}
-
-.task-item-wrap {
-    color: #000000;
-    background-color: rgba(255,255,255,0.9);
-    padding-left: 15px;
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-}
-
-
-#task-list li .edit {
-    display: none;
-    width: 100%;
-    font-size: 20px;
-    line-height: inherit;
-    padding: 0px;
-    position: relative;
-    margin: 0 auto;
-    background: 0;
-    border: 0;
-    border-bottom: 0px;
-    color: #000000;
-    text-align: center;
-    background-color: rgba(255, 0, 0, 0.4);
-    color: #ffffff;
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-}
-
-#task-list li .edit-switch.edit-mode + .task-item-wrap + .edit {
-    display: block;
-}
-
-
-
-#task-list li .edit-switch.edit-mode + .task-item-wrap input.edit {
-
-}
-#task-list li .edit-switch.edit-mode + .task-item-wrap {
-    display: none;
-}
-
-#task-list li.done label {
-    color: #777777;
-    text-decoration: line-through;
-}
-
-#task-list li .done-true  {
-    color: #7B7B7B;
-    text-decoration: line-through;
-}
-
-#task-list .destroy {
-    position: absolute;
-    right: 5px;
-    top: 20px;
-    display: none;
-    cursor: pointer;
-    width: 20px;
-    height: 20px;
-}
-
-
-.menu-item {
-    display: inline-block;
-}
-
-.menu-item.task-counter {
-    color: #D2D2D2
-}
-
-.clear-completed {
-    color: #FFFFFF;
-    font-size: 14px;
-    cursor: pointer;
-    position: absolute;
-    right: 15px;
-}
-
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-    display: none;
 }
 
 input[type="checkbox"] {
@@ -232,18 +31,13 @@ input[type="checkbox"] + label {
     background-color: rgba(210,210,210,0.8);
     cursor:pointer;
     position: relative;
-    margin-top: -4px;
+    margin-top: -5px;
     margin-right: 8px;
     vertical-align: middle;
     border-radius: 4px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
 }
-
-#menu-wrapper input[type="checkbox"] + label {
-    background-color: rgba(255,255,255,0.9);
-}
-
 
 input[type="checkbox"]:checked + label:before {
     font-family: "fontAwesome";
@@ -252,6 +46,205 @@ input[type="checkbox"]:checked + label:before {
     padding-left: 2px;
 }
 
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+    display: none;
+}
+
+#main-wrapper {
+    height: 100%;
+    overflow: hidden;
+}
+
+#content-wrapper {
+    width: 65%;
+    padding: 6px;
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    height: 100%;
+}
+
+/* HEADER ELEMENTS */
+
+#content-wrapper h1 {
+    font-size: 36px;
+    text-align: center;
+    margin-top: 60px;
+    position: relative;
+    font-family: "LatoWebBold";
+}
+
+#content-wrapper #new-task {
+    width: 50%;
+    line-height: 1.4em;
+    padding: 6px;
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    background: 0;
+    border: 0;
+    border-bottom: 3px solid #fff;
+    color: #fff;
+    outline: 0;
+    text-align: center;
+}
+
+/* INTERACTIONS ELEMENTS */
+
+
+#interactions-wrapper {
+    position: relative;
+    margin-top: 60px;
+    height: 100%;
+}
+
+/* Menu */
+
+#interactions-wrapper #menu-wrapper {
+    font-size: 14px;
+    padding: 8px;
+    padding-left: 15px;
+    margin-top: 60px;
+    line-height: 24px;
+    background-color: rgba(255, 165, 0, 0.9);
+    border-radius: 4px 4px 0px 0px;
+    -webkit-border-radius: 4px 4px 0px 0px;
+    -moz-border-radius: 4px 4px 0px 0px;
+}
+
+#menu-wrapper input[type="checkbox"] + label {
+    background-color: rgba(255,255,255,0.9);
+}
+
 #menu-wrapper  input[type="checkbox"]:checked + label:before {
     color: #FFA500;
+}
+
+#interactions-wrapper .menu-item {
+    display: inline-block;
+}
+
+#interactions-wrapper input[type="checkbox"].menu-item  {
+    display: none;
+}
+
+#interactions-wrapper .menu-item.task-counter {
+    padding-left: 2px;
+}
+
+#interactions-wrapper .clear-completed {
+    color: #FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+}
+
+/* Tasks */
+
+#tasks-wrapper {
+position: absolute;
+left: 0px;
+right: 0px;
+bottom: 260px;
+top: 40px;
+overflow: scroll;
+-webkit-overflow-scrolling: touch;
+}
+
+#tasks-wrapper #task-list {
+    margin: 0px;
+    padding: 0;
+    list-style: none;
+}
+
+#tasks-wrapper  #task-list li {
+    position: relative;
+    margin-bottom: 3px;
+}
+
+#tasks-wrapper  #task-list li:nth-of-type(1) .task-item-wrap,
+#tasks-wrapper  #task-list li:nth-of-type(1) .edit {
+    border-radius: 0px 0px 4px 4px;
+    -webkit-border-radius: 0px 0px 4px 4px;
+    -moz-border-radius: 0px 0px 4px 4px;
+}
+
+#tasks-wrapper .edit-switch {
+    right: 15px;
+    position: absolute;
+    z-index: 10;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 52px;
+
+}
+
+#tasks-wrapper .edit-switch:before {
+    font-family: "FontAwesome";
+    content:"\f040";
+    color: #7B7B7B;
+}
+
+#tasks-wrapper .edit-switch.edit-mode:before {
+    font-family: "FontAwesome";
+    content:"\f058";
+    font-size: 24px;
+    color: #FFFFFF;
+}
+
+#tasks-wrapper .edit-switch:hover:before {
+    color: #FFA500
+}
+
+#tasks-wrapper  .edit-switch.edit-mode:hover:before {
+    color: #FFE403;
+}
+
+#tasks-wrapper .task-item-wrap {
+    color: #000000;
+    background-color: rgba(255,255,255,0.9);
+    padding: 8px 0px 10px 15px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+}
+
+#tasks-wrapper #task-list li input:focus {
+    outline: none;
+}
+
+#task-list li .done-true  {
+    color: #7B7B7B;
+    text-decoration: line-through;
+}
+
+#tasks-wrapper #task-list li .edit {
+    display: none;
+    width: 100%;
+    padding: 8px 0px 10px 0px;
+    position: relative;
+    margin: 0 auto;
+    background: 0;
+    border: 0;
+    border-bottom: 0px;
+    text-align: center;
+    background-color: rgba(255, 0, 0, 0.4);
+    color: #ffffff;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+}
+
+#tasks-wrapper #task-list li .edit-switch.edit-mode + .task-item-wrap + .edit {
+    display: block;
+}
+
+#tasks-wrapper #task-list li .edit-switch.edit-mode + .task-item-wrap {
+    display: none;
 }

@@ -8,6 +8,7 @@ angular.module('taskApp',[]).controller('actionsController',function($scope) {
     $scope.tasks = [];
     $scope.selectAll = false;
 
+    // needed to pass the event in order to resolve a problem with Firefox
     $scope.addTask = function(event) {
         if(event.keyCode == 13 && $scope.taskText){
             $scope.tasks.push({text:$scope.taskText, done:false});

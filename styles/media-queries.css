@@ -1,0 +1,39 @@
+/*
+
+NOTE:
+I could also detect the type of device via javascript and could assign a class "mobile" to the body tag
+so I'd be able to create a specific CSS rules for that type of device. E.g: body.mobile {background: #000;}
+Here I'm using media queries to detect specific devices.
+
+*/
+
+@media only screen and (max-width: 763px) {
+    body {
+        font-family: "LatoWeb";
+        font-size: 20px;
+    }
+
+    #main-wrapper h1 {
+        font-size: 19px;
+    }
+
+    #content-wrapper {
+        width: 80%;
+    }
+
+    #content-wrapper h1 {
+        margin-top: 30px;
+    }
+    #interactions-wrapper,
+    #interactions-wrapper #menu-wrapper
+    {
+        margin-top: 20px;
+    }
+    #tasks-wrapper {
+        bottom: 200px;
+    }
+    #tasks-wrapper .edit-switch {
+        line-height: 44px;
+
+    }
+}

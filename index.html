@@ -2,11 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Todo App</title>
     <link type="text/css" rel="stylesheet" href="styles/normalize-v3.0.2.css">
     <link type="text/css" rel="stylesheet" href="styles/fonts.css">
     <link type="text/css" rel="stylesheet" href="styles/font-awesome.min.css">
     <link type="text/css" rel="stylesheet" href="styles/main.css">
+    <link type="text/css" rel="stylesheet" href="styles/media-queries.css">
 </head>
 
 <!-- ng-cloak directive used in order to prevent the Angular html template from being briefly displayed by the browser in uncompiled form  -->
@@ -22,6 +24,7 @@
     <input id="new-task" type="text" ng-model="taskText" ng-keyup="addTask($event)"/>
 
     <div id="interactions-wrapper">
+
     <!-- menu -->
     <div id="menu-wrapper" ng-show="isTask()">
         <input id="toggle-all" class="menu-item" type="checkbox" ng-model="selectAll" ng-click="toggleselectAll()"/>
@@ -50,8 +53,6 @@
 
 </div>
 </div>
-
-
 
 <script src="scripts/angularJS-v1.4.8.js"></script>
 <script src="scripts/controllers/actionsController.js"></script>
