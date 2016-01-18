@@ -8,7 +8,7 @@ angular.module('taskApp',[]).controller('actionsController',function($scope) {
     $scope.tasks = [];
     $scope.selectAll = false;
 
-    $scope.addTask = function() {
+    $scope.addTask = function(event) {
         if(event.keyCode == 13 && $scope.taskText){
             $scope.tasks.push({text:$scope.taskText, done:false});
             $scope.taskText = '';

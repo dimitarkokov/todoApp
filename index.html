@@ -2,43 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Todo App</title>
     <link type="text/css" rel="stylesheet" href="styles/normalize-v3.0.2.css">
     <link type="text/css" rel="stylesheet" href="styles/fonts.css">
     <link type="text/css" rel="stylesheet" href="styles/font-awesome.min.css">
     <link type="text/css" rel="stylesheet" href="styles/main.css">
 </head>
 
-
+<!-- ng-cloak directive used in order to prevent the Angular html template from being briefly displayed by the browser in uncompiled form  -->
 <body ng-app="taskApp" ng-cloak>
 
+
 <div id="main-wrapper" ng-controller="actionsController">
-<div id="data-wrapper">
+<div id="content-wrapper">
+
+    <!-- title -->
     <h1>What are your tasks for today?</h1>
-    <input id="new-task" type="text" ng-model="taskText"  size="30" ng-keyup="addTask()"/>
+    <!-- insert task -->
+    <input id="new-task" type="text" ng-model="taskText" ng-keyup="addTask($event)"/>
 
-
-        <div id="menu-wrapper" ng-show="isTask()">
-            <input class="menu-item" id="toggle-all" type="checkbox" ng-model="selectAll"
-                   ng-click="toggleselectAll()"/>
-            <label for="toggle-all">Mark all as complete</label>
-            <div class="menu-item" id="task-counter">{{remaining()}} of {{tasks.length}} remaining</div>
-            <div class="menu-item" id="clear-completed" ng-click="removeTasks()" ng-show="taskDone()">
-                <i class="fa fa-trash"></i> <span>{{(tasks.length - remaining())}} {{itemText()}}</span>
-            </div>
+    <div id="interactions-wrapper">
+    <!-- menu -->
+    <div id="menu-wrapper" ng-show="isTask()">
+        <input id="toggle-all" class="menu-item" type="checkbox" ng-model="selectAll" ng-click="toggleselectAll()"/>
+        <label for="toggle-all"></label>
+        <div class="task-counter menu-item">{{remaining()}} of {{tasks.length}} remaining</div>
+        <div class="clear-completed menu-item" ng-click="removeTasks()" ng-show="taskDone()">
+            <i class="fa fa-trash"></i> <span>{{(tasks.length - remaining())}} {{itemText()}}</span>
         </div>
+    </div>
 
+    <!-- tasks list -->
+    <div id="tasks-wrapper">
     <ul id="task-list">
-        <li ng-repeat="task in tasks"  >
-            <div class="edit-switch" ng-class="{'':!toggled, 'edit-mode':toggled}" style="float: right" ng-click="toggled = !toggled"></div>
+        <li ng-repeat="task in tasks">
+            <div class="edit-switch" ng-class="{'':!toggled, 'edit-mode':toggled}" ng-click="toggled = !toggled"></div>
             <div class="task-item-wrap">
-
-                <input class="check-task" type="checkbox" ng-model="task.done"/>
+                <input id="task-{{$index}}" class="check-task" type="checkbox" ng-model="task.done"/>
+                <label for="task-{{$index}}"></label>
                 <span class="done-{{task.done}}">{{task.text}}</span>
             </div>
             <input class="edit" type="text" ng-model="task.text"/>
         </li>
     </ul>
+    </div>
+    </div>
 
 </div>
 </div>
