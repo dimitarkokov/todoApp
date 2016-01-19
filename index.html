@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Todo App</title>
     <link type="text/css" rel="stylesheet" href="styles/normalize-v3.0.2.css">
-    <link type="text/css" rel="stylesheet" href="styles/fonts.css">
-    <link type="text/css" rel="stylesheet" href="styles/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/fonts/lato.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/fonts/font-awesome.min.css">
     <link type="text/css" rel="stylesheet" href="styles/main.css">
     <link type="text/css" rel="stylesheet" href="styles/media-queries.css">
 </head>
@@ -15,13 +15,16 @@
 <body ng-app="taskApp" ng-cloak>
 
 
-<div id="main-wrapper" ng-controller="actionsController">
+<div id="main-wrapper" ng-controller="ActionsCtrl">
 <div id="content-wrapper">
 
     <!-- title -->
-    <h1>What are your tasks for today?</h1>
+    <h1>What are your tasks today?</h1>
     <!-- insert task -->
-    <input id="new-task" type="text" ng-model="taskText" ng-keyup="addTask($event)"/>
+    <div id="insert-wrapper">
+    <input id="new-task" class="inline-item" type="text" ng-focus="focused = true" ng-blur="focused = false"  ng-model="taskText"/>
+    <div id="submit-task" class="inline-item" ng-class="{lightButton: focused}" ng-click="addTask($event)"><i class="fa fa-plus-circle"></i></div>
+    </div>
 
     <div id="interactions-wrapper">
 
@@ -39,6 +42,10 @@
     <div id="tasks-wrapper">
     <ul id="task-list">
         <li ng-repeat="task in tasks">
+    <!--
+    I could have done that through the Controller but I didn't want to manipulate the DOM with it.
+    And per AngularJS' documentation it is not correct to use the Controller to manipulate the DOM so I've used the directives below.
+    -->
             <div class="edit-switch" ng-class="{'':!toggled, 'edit-mode':toggled}" ng-click="toggled = !toggled"></div>
             <div class="task-item-wrap">
                 <input id="task-{{$index}}" class="check-task" type="checkbox" ng-model="task.done"/>

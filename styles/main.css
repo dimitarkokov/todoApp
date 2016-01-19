@@ -79,19 +79,43 @@ input[type="checkbox"]:checked + label:before {
     font-family: "LatoWebBold";
 }
 
-#content-wrapper #new-task {
+#insert-wrapper {
+    position: relative;
+    margin: 0 auto;
+    display: block;
     width: 50%;
+}
+
+#insert-wrapper #new-task {
+    width: 100%;
     line-height: 1.4em;
     padding: 6px;
     position: relative;
     margin: 0 auto;
-    display: block;
     background: 0;
     border: 0;
     border-bottom: 3px solid #fff;
     color: #fff;
     outline: 0;
     text-align: center;
+}
+
+#insert-wrapper #submit-task {
+    color: transparent;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 26px;
+    position: absolute;
+    top: 8px;
+    right: -35px;
+}
+
+#insert-wrapper #submit-task.lightButton {
+    color: #FFFFFF;
+}
+
+#insert-wrapper #submit-task.lightButton:hover {
+    color: #FFA500;
 }
 
 /* INTERACTIONS ELEMENTS */
@@ -125,6 +149,7 @@ input[type="checkbox"]:checked + label:before {
     color: #FFA500;
 }
 
+#insert-wrapper .inline-item,
 #interactions-wrapper .menu-item {
     display: inline-block;
 }
@@ -148,13 +173,13 @@ input[type="checkbox"]:checked + label:before {
 /* Tasks */
 
 #tasks-wrapper {
-position: absolute;
-left: 0px;
-right: 0px;
-bottom: 260px;
-top: 40px;
-overflow: scroll;
--webkit-overflow-scrolling: touch;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 260px;
+    top: 40px;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 #tasks-wrapper #task-list {
@@ -194,7 +219,8 @@ overflow: scroll;
 #tasks-wrapper .edit-switch.edit-mode:before {
     font-family: "FontAwesome";
     content:"\f058";
-    font-size: 24px;
+    font-size: 22px;
+    line-height: 54px;
     color: #FFFFFF;
 }
 
@@ -213,6 +239,10 @@ overflow: scroll;
     border-radius: 4px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 30px;
 }
 
 #tasks-wrapper #task-list li input:focus {
